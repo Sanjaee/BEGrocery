@@ -1,3 +1,12 @@
+alur nya buat role dulu 3 lalu register sesuai id role nya
+untuk default register nya yaitu user sebagai pembeli 
+admin dan super admin di edit di database atau be
+
+
+
+
+
+
 http://localhost:5000/products
 
 
