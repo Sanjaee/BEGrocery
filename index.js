@@ -13,6 +13,8 @@ const shipping = require("./src/routes/shippingRoutes");
 const cart = require("./src/routes/cartRoutes");
 const payment = require("./src/routes/paymentRoutes");
 const discount = require("./src/routes/discountRoutes");
+const productsImage = require("./src/routes/productImageRoutes");
+const rajaongkir = require("./src/routes/RAJAONGKIT");
 
 require("dotenv").config();
 
@@ -31,6 +33,8 @@ app.use("/shipping", shipping);
 app.use("/carts", cart);
 app.use("/payments", payment);
 app.use("/discounts", discount);
+app.use("/rajaongkir", rajaongkir);
+app.use("/productImages", productsImage);
 
 const port = process.env.PORT || 3000;
 

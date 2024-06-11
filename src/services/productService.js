@@ -1,3 +1,5 @@
+// services/productService.js
+
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
@@ -14,7 +16,13 @@ exports.createProduct = async (productData) => {
 
 exports.getAllProducts = async () => {
   try {
-    const products = await prisma.product.findMany();
+    const products = await prisma.product.findMany({
+      include: {
+        ProductImage: true,
+        StokProduct: true,
+        Discount: true,
+      },
+    });
     return products;
   } catch (error) {
     throw new Error(`Failed to get products: ${error.message}`);
@@ -25,6 +33,11 @@ exports.getProductById = async (id) => {
   try {
     const product = await prisma.product.findUnique({
       where: { id },
+      include: {
+        ProductImage: true,
+        StokProduct: true,
+        Discount: true,
+      },
     });
     return product;
   } catch (error) {
